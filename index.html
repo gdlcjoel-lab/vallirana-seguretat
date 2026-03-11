@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vallirana Seguretat | Cerrajería • Seguridad • Tecnología</title>
+  <meta name="description"
+    content="Vallirana Seguretat – Especialistas en seguridad del hogar y empresa. Puertas blindadas, alarmas, bombillos de alta seguridad, cajas fuertes y más. Cerrajería 24h en Vallirana, Barcelona." />
+  <meta property="og:title" content="Vallirana Seguretat | Cerrajería de Seguridad" />
+  <meta property="og:description"
+    content="Protege lo que más te importa. Tecnología certificada para mayor seguridad en el hogar." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">🔐</span>
+        <div>
+          <span class="logo-text">VALLIRANA</span>
+          <span class="logo-sub">SEGURETAT</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#productos" class="nav-link">Productos <span class="chevron">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="producto-puertas.html">Puertas de Seguridad</a></li>
+            <li><a href="producto-alarmas.html">Alarmas INN.ALARM</a></li>
+            <li><a href="producto-bombillos.html">Bombillos y Llaves</a></li>
+            <li><a href="producto-cajas.html">Cajas Fuertes</a></li>
+            <li><a href="producto-deteccion.html">Detección Anticipada</a></li>
+            <li><a href="producto-salidas.html">Salidas de Emergencia</a></li>
+          </ul>
+        </li>
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#nosotros" class="nav-link">Quiénes Somos</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <a href="tel:616219298" class="btn-nav">
+        <span>📞</span> 616 21 92 98
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="inicio">
+    <!-- VÍDEO DE FONDO -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-video-overlay"></div>
+
+    <!-- PARTÍCULAS ENCIMA DEL VÍDEO -->
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-particles" id="particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">🛡️ CERRAJERÍA 24 HORAS · BARCELONA</div>
+      <h1 class="hero-title">
+        Tu Seguridad,<br />
+        <span class="gradient-text">Nuestra Prioridad</span>
+      </h1>
+      <p class="hero-subtitle">
+        Tecnología certificada contra el robo. Protege lo que más importa<br />
+        con soluciones de seguridad de última generación.
+      </p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary" id="btnPresupuesto">
+          <span class="btn-bg"></span>
+          <span class="btn-text">Pide Presupuesto Gratis</span>
+        </a>
+        <a href="#productos" class="btn-secondary">Ver Productos →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">24<small>h</small></span>
+          <span class="stat-label">Servicio Continuo</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">+15<small>años</small></span>
+          <span class="stat-label">Experiencia</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">100<small>%</small></span>
+          <span class="stat-label">Certificado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <span>Descubre más</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TICKER DE CONFIANZA -->
+  <div class="trust-ticker">
+    <div class="ticker-track">
+      <span>🔒 Puertas Blindadas</span>
+      <span>🚨 Alarmas Sin Cuotas</span>
+      <span>🔑 Anti-Bumping</span>
+      <span>🏦 Cajas Fuertes</span>
+      <span>👁️ Detección Anticipada</span>
+      <span>🚪 Salidas de Emergencia</span>
+      <span>⚡ Urgencias 24h</span>
+      <span>📍 Vallirana, Barcelona</span>
+      <!-- Duplicado para loop -->
+      <span>🔒 Puertas Blindadas</span>
+      <span>🚨 Alarmas Sin Cuotas</span>
+      <span>🔑 Anti-Bumping</span>
+      <span>🏦 Cajas Fuertes</span>
+      <span>👁️ Detección Anticipada</span>
+      <span>🚪 Salidas de Emergencia</span>
+      <span>⚡ Urgencias 24h</span>
+      <span>📍 Vallirana, Barcelona</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTOS SECTION -->
+  <section class="section" id="productos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nuestros Productos</span>
+        <h2 class="section-title">Seguridad <span class="gradient-text">Integral</span></h2>
+        <p class="section-desc">Soluciones certificadas para cada necesidad de protección, desde el hogar hasta la
+          empresa.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Puertas -->
+        <div class="product-card" id="puertas" data-aos="fade-up" data-delay="0">
+          <div class="product-icon-wrap">
+            <span class="product-icon">🚪</span>
+          </div>
+          <div class="product-glow"></div>
+          <h3>Puertas de Seguridad INN.DOOR</h3>
+          <p>Homologadas contra el robo (UNE 85160:2013). Dos familias:
+            <strong>Ecofeel</strong> (eficiencia energética) y
+            <strong>Securefeel</strong> (máxima resistencia a ataques violentos).
+            Incluyen detección anticipada mediante detectores-trampa invisibles.
+          </p>
+          <a href="producto-puertas.html" class="product-cta">Ver Ficha Completa →</a>
+        </div>
+
+        <!-- Alarmas -->
+        <div class="product-card featured" id="alarmas" data-aos="fade-up" data-delay="100">
+          <div class="product-badge">⭐ Gama INN.ALARM</div>
+          <div class="product-icon-wrap">
+            <span class="product-icon">🚨</span>
+          </div>
+          <div class="product-glow"></div>
+          <h3>Sistemas INN.ALARM</h3>
+          <p>Soluciones sin cautividad, sin cuotas mensuales y sin cables. Control total mediante
+            aplicación móvil. Detección perimetral inteligente para evitar intrusiones sin falsas alarmas.</p>
+          <a href="producto-alarmas.html" class="product-cta">Ver Ficha Completa →</a>
+        </div>
+
+        <!-- Bombillos -->
+        <div class="product-card" id="bombillos" data-aos="fade-up" data-delay="200">
+          <div class="product-icon-wrap">
+            <span class="product-icon">🔑</span>
+          </div>
+          <div class="product-glow"></div>
+          <h3>Bombillos INN.KEY Smart</h3>
+          <p>Tecnología anti-bumping con <strong>auditoría de llave premium</strong>.
+            Protocolo <strong>Key Control</strong>: avisos automáticos por SMS al propietario ante cualquier intento de
+            copia no autorizada. Sistema patentado con rodillo flotante.</p>
+          <a href="producto-bombillos.html" class="product-cta">Ver Ficha Completa →</a>
+        </div>
+
+        <!-- Cajas Fuertes -->
+        <div class="product-card" id="cajas" data-aos="fade-up" data-delay="300">
+          <div class="product-icon-wrap">
+            <span class="product-icon">🏦</span>
+          </div>
+          <div class="product-glow"></div>
+          <h3>Cajas Fuertes Grado IV/V</h3>
+          <p>Alta resistencia certificada bajo normativa europea EN 1143-1. Soluciones para hogar y banca con sistemas
+            de cierre electrónicos inteligentes y retardo de apertura.</p>
+          <a href="producto-cajas.html" class="product-cta">Ver Ficha Completa →</a>
+        </div>
+
+        <!-- Detección Anticipada -->
+        <div class="product-card" id="deteccion" data-aos="fade-up" data-delay="400">
+          <div class="product-icon-wrap">
+            <span class="product-icon">👁️</span>
+          </div>
+          <div class="product-glow"></div>
+          <h3>Detección Anticipada INN.ALARM</h3>
+          <p>La tecnología que avisa <strong>antes</strong> de que el ladrón logre entrar. Sensores inteligentes en el
+            escudo de la cerradura que detectan el intento de ataque físico.</p>
+          <a href="producto-deteccion.html" class="product-cta">Ver Ficha Completa →</a>
+        </div>
+
+        <!-- Salidas de Emergencia -->
+        <div class="product-card" id="emergencia" data-aos="fade-up" data-delay="500">
+          <div class="product-icon-wrap">
+            <span class="product-icon">🚪</span>
+          </div>
+          <div class="product-glow"></div>
+          <h3>Salidas de Emergencia Controladas</h3>
+          <p>Sistemas de seguridad para puertas de evacuación que dificultan el uso indebido y el robo, garantizando la
+            seguridad de las personas según normativa vigente.</p>
+          <a href="producto-salidas.html" class="product-cta">Ver Ficha Completa →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGURIDAD CTA SECTION -->
+  <section class="cta-section" id="servicios">
+    <div class="cta-bg-grid"></div>
+    <div class="container">
+      <div class="cta-wrap">
+        <div class="cta-text">
+          <span class="section-tag">¿Cómo de seguro estás?</span>
+          <h2>Tecnología Certificada<br /><span class="gradient-text">Para Tu Hogar</span></h2>
+          <p>Acércate a nuestra tienda en Carrer Major, 55, Vallirana, y te ayudaremos a elegir la solución perfecta
+            para ti. Tecnología al servicio de tu tranquilidad.</p>
+          <div class="cta-hours">
+            <div class="hour-item">
+              <span class="hour-icon">🕐</span>
+              <div>
+                <strong>Lunes – Viernes</strong>
+                <span>9:30–13:30 &amp; 15:30–20:00</span>
+              </div>
+            </div>
+            <div class="hour-item">
+              <span class="hour-icon">🕐</span>
+              <div>
+                <strong>Sábado</strong>
+                <span>10:00–13:30</span>
+              </div>
+            </div>
+          </div>
+          <div class="cta-actions">
+            <a href="#contacto" class="btn-primary">
+              <span class="btn-bg"></span>
+              <span class="btn-text">Contactar Ahora</span>
+            </a>
+            <a href="https://protegetucasacontraelrobo.com/" target="_blank" rel="noopener" class="btn-ghost">
+              Evalúa Tu Seguridad 🛡️
+            </a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="security-score-card">
+            <div class="score-ring">
+              <svg viewBox="0 0 120 120">
+                <circle class="score-bg" cx="60" cy="60" r="52" />
+                <circle class="score-fill" cx="60" cy="60" r="52" id="scoreCircle" />
+              </svg>
+              <div class="score-value" id="scoreValue">0%</div>
+            </div>
+            <p class="score-label">Nivel de seguridad actual</p>
+            <div class="score-items">
+              <div class="score-item">
+                <span class="check">✅</span> Puerta de Seguridad
+              </div>
+              <div class="score-item">
+                <span class="check warn">⚠️</span> Sistema de Alarma
+              </div>
+              <div class="score-item">
+                <span class="check">✅</span> Bombillo Anti-Bumping
+              </div>
+              <div class="score-item red">
+                <span class="check err">❌</span> Detección Anticipada
+              </div>
+            </div>
+            <a href="https://www.evaluadordeseguridad.com/" target="_blank" rel="noopener" class="score-btn">
+              Haz el test completo →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS SECTION -->
+  <section class="section" id="nosotros">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="about-visual">
+          <div class="about-card-hex">
+            <div class="hex-inner">
+              <span class="hex-icon">🔐</span>
+              <strong>INN Corner</strong>
+              <span>Vallirana</span>
+            </div>
+          </div>
+          <div class="about-badge-float">
+            <span>💎</span> Distribuidor Oficial INN Solutions
+          </div>
+          <div class="about-badge-float b2">
+            <span>🏅</span> Método Genoma del Robo Certificado
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">Quiénes Somos</span>
+          <h2>Especialistas en <span class="gradient-text">Protección Física</span></h2>
+          <p>Somos cerrajeros especializados en seguridad en Vallirana (Barcelona). Como punto de venta oficial de INN
+            Solutions, ofrecemos los productos más avanzados del mercado para proteger hogares y empresas.</p>
+          <p>Tu seguridad y la de los tuyos es nuestra prioridad. Llevamos más de 15 años protegiendo a las familias de
+            la zona con tecnología certificada y asesoramiento personalizado.</p>
+          <div class="about-features">
+            <a href="tel:616219298" class="feat-item"><span>⚡</span> Urgencias 24 horas</a>
+            <a href="#servicios" class="feat-item"><span>🔧</span> Instalación Profesional</a>
+            <a href="#contacto" class="feat-item"><span>📋</span> Asesoramiento Gratuito</a>
+            <a href="#productos" class="feat-item"><span>🏆</span> Productos Certificados</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section dark-section" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Galería</span>
+        <h2>Nuestros <span class="gradient-text">Trabajos</span></h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item g-1">
+          <div class="gallery-placeholder">
+            <span>🚪</span>
+            <p>Instalación de Puerta Blindada</p>
+          </div>
+          <div class="gallery-overlay">Puertas de Seguridad</div>
+        </div>
+        <div class="gallery-item g-2">
+          <div class="gallery-placeholder">
+            <span>🔑</span>
+            <p>Bombillo INN de Alta Seguridad</p>
+          </div>
+          <div class="gallery-overlay">Bombillos y Llaves</div>
+        </div>
+        <div class="gallery-item g-3">
+          <div class="gallery-placeholder">
+            <span>🚨</span>
+            <p>Sistema de Alarma Instalado</p>
+          </div>
+          <div class="gallery-overlay">Alarmas</div>
+        </div>
+        <div class="gallery-item g-4">
+          <div class="gallery-placeholder">
+            <span>🏦</span>
+            <p>Caja Fuerte de Alta Resistencia</p>
+          </div>
+          <div class="gallery-overlay">Cajas Fuertes</div>
+        </div>
+        <div class="gallery-item g-5">
+          <div class="gallery-placeholder">
+            <span>👁️</span>
+            <p>Sistema de Detección Anticipada</p>
+          </div>
+          <div class="gallery-overlay">Detección Anticipada</div>
+        </div>
+        <div class="gallery-item g-6">
+          <div class="gallery-placeholder">
+            <span>🏪</span>
+            <p>Nuestra Tienda en Vallirana</p>
+          </div>
+          <div class="gallery-overlay">Nuestra Tienda</div>
+        </div>
+      </div>
+      <div class="gallery-nav">
+        <a href="https://inncornervallirana.com/fotos/" target="_blank" class="btn-ghost">Ver Todas las Fotos →</a>
+        <a href="https://inncornervallirana.com/videos/" target="_blank" class="btn-ghost">Ver Vídeos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contacto</span>
+        <h2>Habla con <span class="gradient-text">Nosotros</span></h2>
+        <p class="section-desc">Puedes enviarnos fotografías o archivos de forma confidencial. Resolveremos tu duda en
+          minutos.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-item">
+              <span class="ci-icon">📍</span>
+              <div>
+                <strong>Dirección</strong>
+                <span>Carrer Major, 55<br />08759 Vallirana, Barcelona</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-icon">📞</span>
+              <div>
+                <strong>Teléfonos</strong>
+                <a href="tel:931581380">931 58 13 80</a>
+                <a href="tel:616219298">616 21 92 98</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@inncornervallirana.com">info@inncornervallirana.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="ci-icon">🕐</span>
+              <div>
+                <strong>Horario</strong>
+                <span>Lu–Vi: 9:30–13:30 / 15:30–20:00</span>
+                <span>Sábado: 10:00–13:30</span>
+              </div>
+            </div>
+          </div>
+          <div class="emergency-banner">
+            <span class="emergency-pulse"></span>
+            <div>
+              <strong>Urgencia 24 horas</strong>
+              <span>Llama ahora: <a href="tel:616219298">616 21 92 98</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formspree: Cambia 'https://formspree.io/f/mzdjrdap' por tu ID de Formspree -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="asunto">Asunto</label>
+            <select id="asunto" name="asunto">
+              <option value="">Selecciona un producto/servicio</option>
+              <option>Puertas de Seguridad</option>
+              <option>Alarmas</option>
+              <option>Bombillos y Llaves</option>
+              <option>Cajas Fuertes</option>
+              <option>Detección Anticipada</option>
+              <option>Salidas de Emergencia</option>
+              <option>Urgencia / Cerrajero</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Consulta</label>
+            <textarea id="mensaje" name="mensaje" rows="4"
+              placeholder="Describe tu consulta. Puedes incluir detalles sobre tu vivienda o situación..."></textarea>
+          </div>
+          <div class="form-group file-group">
+            <label for="archivo">📎 Adjuntar imagen/archivo (opcional)</label>
+            <input type="file" id="archivo" name="archivo" accept="image/*,.pdf" />
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="privacy" name="privacy" required />
+            <label for="privacy">He leído y acepto la <a href="politica-privacidad.html">política de
+                privacidad</a></label>
+          </div>
+          <button type="submit" class="btn-primary full-width" id="submitBtn">
+            <span class="btn-bg"></span>
+            <span class="btn-text">Enviar Consulta</span>
+          </button>
+          <p class="form-note">🔒 Tus datos son tratados con total confidencialidad.</p>
+        </form>
+      </div>
+
+      <!-- MAPA -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.5!2d1.8850!3d41.3850!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4999999999999%3A0x0!2sCarrer+Major%2C+55%2C+08759+Vallirana%2C+Barcelona!5e0!3m2!1ses!2ses!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Vallirana Seguretat"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-icon">🔐</span>
+          <div>
+            <span class="logo-text">VALLIRANA SEGURETAT</span>
+            <span class="logo-sub">Cerrajería · Seguridad · Tecnología</span>
+          </div>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-col">
+            <h4>Productos</h4>
+            <ul>
+              <li><a href="#puertas">Puertas de Seguridad</a></li>
+              <li><a href="#alarmas">Alarmas</a></li>
+              <li><a href="#bombillos">Bombillos y Llaves</a></li>
+              <li><a href="#cajas">Cajas Fuertes</a></li>
+              <li><a href="#deteccion">Detección Anticipada</a></li>
+              <li><a href="#emergencia">Salidas de Emergencia</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="#nosotros">Quiénes Somos</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#galeria">Galería</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="tel:616219298">616 21 92 98</a></li>
+              <li><a href="tel:931581380">931 58 13 80</a></li>
+              <li><a href="mailto:info@inncornervallirana.com">info@inncornervallirana.com</a></li>
+              <li>Carrer Major, 55 - Vallirana</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Vallirana Seguretat – INN Corner Vallirana. Todos los derechos reservados.</p>
+        <div class="footer-legal">
+          <a href="aviso-legal.html">Aviso Legal</a>
+          <a href="politica-privacidad.html">Privacidad</a>
+          <a href="politica-cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/34616219298?text=Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20de%20seguridad."
+    class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="whatsapp-pulse"></span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    <span class="whatsapp-tooltip">¡Escríbenos!</span>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">▲</button>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <p>🍪 Utilizamos cookies técnicas y de análisis para mejorar tu experiencia en este proyecto de rediseño.
+        <a href="politica-cookies.html">Más información</a>
+      </p>
+      <div class="cookie-actions">
+        <button class="btn-cookie-accept" id="acceptCookies">Aceptar todo</button>
+        <button class="btn-cookie-ghost"
+          onclick="document.getElementById('cookieBanner').style.display='none'">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
