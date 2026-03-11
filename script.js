@@ -322,21 +322,29 @@ function handleSubmit(e) {
         btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
         e.target.reset();
       } else {
-        throw new Error('Error en el envío');
+        return response.json().then(data => {
+          if (data && data.errors) {
+            throw new Error(data.errors.map(err => err.message).join(", "));
+          }
+          throw new Error('Error desconocido del servidor');
+        });
       }
     })
     .catch((error) => {
       console.error(error);
-      text.textContent = '❌ Error al enviar. Prueba de nuevo.';
+      // Muestra el error exacto (ej. "Please verify your email" o "Captcha required")
+      text.textContent = '❌ ' + error.message;
+      btn.style.background = '#e74c3c'; // Rojo para error
     })
     .finally(() => {
       setTimeout(() => {
         text.textContent = orig;
         btn.disabled = false;
         btn.style.background = '';
-      }, 4000);
+      }, 5000);
     });
 }
+
 
 // ── NÚMERO TELÉFONO: ANIMACIÓN "RING" AL HOVER ────────
 document.querySelectorAll('a[href^="tel:"]').forEach(el => {
