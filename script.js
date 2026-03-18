@@ -53,8 +53,10 @@ const ctx = canvas ? canvas.getContext('2d') : null;
 
 let W = window.innerWidth;
 let H = window.innerHeight;
-canvas.width = W;
-canvas.height = H;
+if (canvas) {
+  canvas.width = W;
+  canvas.height = H;
+}
 
 const PARTICLE_COUNT = 110;
 const particles = [];
@@ -140,7 +142,9 @@ function drawCentreGlow() {
   ctx.fillRect(0, 0, W, H);
 }
 
-for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+if (canvas && ctx) {
+  for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+}
 
 function animateCanvas() {
   if (!ctx) return;
@@ -150,7 +154,7 @@ function animateCanvas() {
   particles.forEach(p => { p.update(); p.draw(); });
   requestAnimationFrame(animateCanvas);
 }
-if (canvas) animateCanvas();
+if (canvas && ctx) animateCanvas();
 
 window.addEventListener('resize', () => {
   if (!canvas) return;
@@ -180,33 +184,63 @@ if (heroVideo) {
 // ── NAVBAR SCROLL ─────────────────────────────────────
 
 const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-  const backToTop = document.getElementById('backToTop');
-  backToTop.classList.toggle('visible', window.scrollY > 400);
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
+  if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 400);
 });
 
 
 // ── HAMBURGER MENU ────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  hamburger.classList.toggle('open');
-});
-// Close on link click
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open');
   });
-});
+
+  // Mobile dropdown toggle (touch-friendly)
+  const dropdowns = navLinks.querySelectorAll('.dropdown');
+  dropdowns.forEach(dd => {
+    const link = dd.querySelector('.nav-link');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        // Only intercept on mobile (when hamburger is visible)
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          e.stopPropagation();
+          dd.classList.toggle('dropdown-open');
+        }
+      });
+    }
+  });
+
+  // Close menu on link click (only for actual navigation links, not dropdown toggles)
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      // Don't close if this is a dropdown toggle on mobile
+      const parentDropdown = a.closest('.dropdown');
+      if (parentDropdown && a.classList.contains('nav-link') && window.innerWidth <= 900) {
+        return; // Handled by dropdown toggle above
+      }
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      // Close all dropdowns too
+      navLinks.querySelectorAll('.dropdown-open').forEach(d => d.classList.remove('dropdown-open'));
+    });
+  });
+}
 
 
 // ── BACK TO TOP ───────────────────────────────────────
-document.getElementById('backToTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 
 // ── AOS: Animate on Scroll ───────────────────────────
