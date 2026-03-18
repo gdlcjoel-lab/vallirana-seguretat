@@ -11,6 +11,7 @@ const cursorTrail = document.getElementById('cursorTrail');
 let mouseX = 0, mouseY = 0, trailX = 0, trailY = 0;
 
 document.addEventListener('mousemove', e => {
+  if (!cursor) return;
   mouseX = e.clientX;
   mouseY = e.clientY;
   cursor.style.left = mouseX + 'px';
@@ -19,23 +20,26 @@ document.addEventListener('mousemove', e => {
 
 // Trail suavizado con lerp
 function lerpCursor() {
+  if (!cursorTrail) return;
   trailX += (mouseX - trailX) * 0.12;
   trailY += (mouseY - trailY) * 0.12;
   cursorTrail.style.left = trailX + 'px';
   cursorTrail.style.top = trailY + 'px';
   requestAnimationFrame(lerpCursor);
 }
-lerpCursor();
+if (cursorTrail) lerpCursor();
 
 // Efecto hover en elementos interactivos
 const interactiveEls = document.querySelectorAll('a, button, input, select, textarea, .product-card, .gallery-item');
 interactiveEls.forEach(el => {
   el.addEventListener('mouseenter', () => {
+    if (!cursor) return;
     cursor.style.transform = 'translate(-50%, -50%) scale(2)';
     cursor.style.opacity = '0.6';
     cursorTrail.style.transform = 'translate(-50%, -50%) scale(1.5)';
   });
   el.addEventListener('mouseleave', () => {
+    if (!cursor) return;
     cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     cursor.style.opacity = '1';
     cursorTrail.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -45,7 +49,7 @@ interactiveEls.forEach(el => {
 
 // ── CANVAS PARTÍCULAS HERO ───────────────────────────
 const canvas = document.getElementById('heroCanvas');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
 
 let W = window.innerWidth;
 let H = window.innerHeight;
@@ -139,15 +143,17 @@ function drawCentreGlow() {
 for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
 
 function animateCanvas() {
+  if (!ctx) return;
   ctx.clearRect(0, 0, W, H);
   // Fondo ahora lo pone el vídeo — el canvas es transparente
   drawConnections();
   particles.forEach(p => { p.update(); p.draw(); });
   requestAnimationFrame(animateCanvas);
 }
-animateCanvas();
+if (canvas) animateCanvas();
 
 window.addEventListener('resize', () => {
+  if (!canvas) return;
   W = window.innerWidth;
   H = window.innerHeight;
   canvas.width = W;
@@ -156,6 +162,7 @@ window.addEventListener('resize', () => {
 
 // Parallax leve del canvas con el mouse
 document.addEventListener('mousemove', e => {
+  if (!canvas) return;
   const nx = (e.clientX / W - 0.5) * 15;
   const ny = (e.clientY / H - 0.5) * 8;
   canvas.style.transform = `translate(${nx}px, ${ny}px) scale(1.02)`;
